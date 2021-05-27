@@ -39,7 +39,7 @@ const companyFormTemplate = `
     </div>
     <div class="form-group">
         <label for="about">About</label>
-        <input type="text" name="about" id="about">
+        <textarea name="about" id="about"></textarea>
     </div>
     <div class="form-group">
         <label for="distance">Distance</label>
@@ -52,31 +52,8 @@ const companyFormTemplate = `
 `;
 
 const contactFormTemplate = `
-    <h5>Contacts</h5>
+    <h5>Contact</h5>
     <div class="form-group">
-        <label for="contact-name">Full Name</label>
-        <input type="text" name="contact-name" id="contact-name">
-    </div>
-    <div class="form-group">
-        <label for="contact-title">Title</label>
-        <input type="text" name="contact-title" id="contact-title">
-    </div>
-    <div class="form-group">
-        <label for="contact-info">Contact Information</label>
-        <input type="text" name="contact-info" id="contact-info">
-        <label for="contact-type">Type</label>
-        <input type="text" name="contact-type" id="contact-type">
-    </div>
-    <div class="form-group log-info">
-        <label for="contact-log">Contact Log</label>
-        <input type="text" name="contact-log" id="contact-log">
-        <label for="log-date">Date</label>
-        <input type="text" name="log-date" id="log-date">
-        <button class="add-log" type="button">Add another log</button>
-    </div>
-`;
-const contactFormTemplatePart = `
-<div class="form-group">
         <label for="contact-name">Full Name</label>
         <input type="text" name="contact-name" id="contact-name">
     </div>
@@ -100,146 +77,182 @@ const contactFormTemplatePart = `
 `;
 
 const appViewTemplate = `
-<div class="card">
-    <h5>Job</h5>
-    <div class="view-item">
-        <h6>Status</h6>
-    </div>
-    <div class="view-item">
-        <h6>Position</h6>
-    </div>
-    <div class="view-item">
-        <h6>Post URL</h6>
-    </div>
-    <div class="view-item">
-        <button>Company</button>
-    </div>
-    <div class="view-item">
-        <button>Main Contact</button>
-    </div>
-    <div class="view-item">
-        <button>View All Contacts</button>
+<div class="app-theme card">
+    <div class="card-decor">
+        <div class="card-foreground app-theme">
+            <div class="card-textbg app-theme-light">
+                <h5>Job</h5>
+                <div class="view-item">
+                    <h6>Status</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Position</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Post URL</h6>
+                </div>
+                <div class="view-item">
+                    <button>Company</button>
+                </div>
+                <div class="view-item">
+                    <button>Main Contact</button>
+                </div>
+                <div class="view-item">
+                    <button>View All Contacts</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 `;
 
 const appDetailsTemplate = `
-<div class="card">
-    <h5>Job</h5>
-    <div class="view-item">
-        <h6>Status</h6>
-    </div>
-    <div class="view-item">
-        <h6>Position</h6>
-    </div>
-    <div class="view-item">
-        <h6>Post URL</h6>
-    </div>
-    <div class="view-item">
-        <h6>Core Skills</h6>
-    </div>
-    <div class=""view-item">  
-        <h6>Optional Skills<h6>
-    </div>
-    <div class="view-item">
-        <h6>Field</h6>
-    </div>
-    <div class="view-item">
-        <button><h6>Company</h6></button>
-    </div>
-    <div class="view-item">
-        <h6>All App Contacts</h6>
-        <p>Contacts List</p>
-        <button>View More/Hide</button> 
-    </div>
+<div class="app-theme card">
+    <div class="card-decor">
+        <div class="card-foreground app-theme">
+            <div class="card-textbg app-theme-light">
+                <h5>Job</h5>
+                <div class="view-item">
+                    <h6>Status</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Position</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Post URL</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Core Skills</h6>
+                </div>
+                <div class=""view-item">  
+                    <h6>Optional Skills<h6>
+                </div>
+                <div class="view-item">
+                    <h6>Field</h6>
+                </div>
+                <div class="view-item">
+                    <button><h6>Company</h6></button>
+                </div>
+                <div class="view-item">
+                    <h6>All App Contacts</h6>
+                    <p>Contacts List</p>
+                    <button>View More/Hide</button> 
+                </div>
+            </div>
+        </div> 
+    </div> 
 </div>
 `;
 
 const companyViewTemplate = `
-<div class="card">
-    <h5>Company</h5>
-    <div class="view-item">
-        <h6>Company Name</h6>
-    </div>
-    <div class="view-item">
-        <h6>Company URL</h6>
-    </div>
+<div class="company-theme card">
+    <div class="card-decor">
+        <div class="card-foreground company-theme">
+            <div class="card-textbg company-theme-light">
+                <h5>Company</h5>
+                <div class="view-item">
+                    <h6>Company Name</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Company URL</h6>
+                </div>
+            </div>
+        </div> 
+    </div> 
 </div>
 `;
 
 const companyDetailsTemplate = `
-<div class="card">
-    <h5>Company</h5>
-    <div class="view-item">
-        <h6>Company Name</h6>
-    </div>
-    <div class="view-item">
-        <h6>Company URL</h6>
-    </div>
-    <div class="view-item">
-        <h6>About</h6>
-    </div>
-    <div class="view-item">
-        <h6>Distance</h6>
-    </div>
-    <div class="view-item">
-        <h6>Workplace Review</h6>
-    </div>
-    <div class="view-item">
-        <h6>All Applications at Company</h6>
-        <button>App Details</button>
-    </div>
-    <div class="view-item">
-        <h6>All Contacts at Company</h6>
-        <button>Contact Details</button>
-    </div>  
+<div class="company-theme card">
+    <div class="card-decor">
+        <div class="card-foreground company-theme">
+            <div class="card-textbg company-theme-light">
+                <h5>Company</h5>
+                <div class="view-item">
+                    <h6>Company Name</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Company URL</h6>
+                </div>
+                <div class="view-item">
+                    <h6>About</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Distance</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Workplace Review</h6>
+                </div>
+                <div class="view-item">
+                    <h6>All Applications at Company</h6>
+                    <button>App Details</button>
+                </div>
+                <div class="view-item">
+                    <h6>All Contacts at Company</h6>
+                    <button>Contact Details</button>
+                </div>  
+            </div>
+        </div> 
+    </div> 
 </div>  
 `;
 
 const contactViewTemplate = `
-<div class="card">
-    <h5>Contact</h5>
-    <div class="view-item">
-        <h6>Full Name</h6>
-    </div>
-    <div class="view-item">
-        <h6>Title</h6>
-    </div>
-    <div class="view-item">
-        <button>Company</button>
-    </div>
-    <div class="view-item">
-        <h6>Best Contact Method</h6>
-    </div>
-    <div class="view-item">
-        <button>More Info</button>
-    </div>
+<div class="contact-theme card">
+    <div class="card-decor">
+        <div class="card-foreground contact-theme">
+            <div class="card-textbg contact-theme-light">
+                <h5>Contact</h5>
+                <div class="view-item">
+                    <h6>Full Name</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Title</h6>
+                </div>
+                <div class="view-item">
+                    <button>Company</button>
+                </div>
+                <div class="view-item">
+                    <h6>Best Contact Method</h6>
+                </div>
+                <div class="view-item">
+                    <button>More Info</button>
+                </div>
+            </div>
+        </div> 
+    </div> 
 </div>
 `;
 
 const contactDetailsTemplate = `
-<div class="card">
-    <h5>Contact</h5>
-    <div class="view-item">
-        <h6>Full Name</h6>
-    </div>
-    <div class="view-item">
-        <h6>Title</h6>
-    </div>
-    <div class="view-item">
-        <h6>Primary Contact Info</h6>
-    </div>
-    <div class="view-item">
-        <h6>More Info</h6>
-        <button>More Info/Hide</button>
-    </div>
-    <div class="view-item">
-        <h6>Company</h6>
-        <button>View Company</button>
-    </div>
-    <div class="view-item">
-        <h6>Contact Log</h6>
-        <button>View more/hide</button>
-    </div>
+<div class="contact-theme card">
+    <div class="card-decor">
+        <div class="card-foreground contact-theme">
+            <div class="card-textbg contact-theme-light">
+                <h5>Contact</h5>
+                <div class="view-item">
+                    <h6>Full Name</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Title</h6>
+                </div>
+                <div class="view-item">
+                    <h6>Primary Contact Info</h6>
+                </div>
+                <div class="view-item">
+                    <h6>More Info</h6>
+                    <button>More Info/Hide</button>
+                </div>
+                <div class="view-item">
+                    <h6>Company</h6>
+                    <button>View Company</button>
+                </div>
+                <div class="view-item">
+                    <h6>Contact Log</h6>
+                    <button>View more/hide</button>
+                </div>
+            </div>
+        </div> 
+    </div> 
 </div>
 `;
