@@ -42,7 +42,29 @@ const viewContactsListContainer = document.querySelector("#allcontactsview");
 
 
 
-//------------ Add forms templates to HTML ------------//
+//------------ Add forms templates helper functions ------------//
+const addLogListenerToContact = form => {
+    form.addEventListener("click", e => {
+        logBtn = e.target;
+        if(logBtn.classList.contains("remove-log")){
+            logBtn.parentElement.remove();
+        }
+        if(logBtn.classList.contains("add-log")){  
+            let newNode = document.createElement("div");
+            newNode.innerHTML = logBtn.parentElement.innerHTML;
+            newNode.classList = "form-group log-info";
+            logBtn.parentElement.parentElement.append(newNode);
+            logBtn.innerHTML = "Remove Log";
+            logBtn.classList = "remove-log"; 
+        }
+    }); 
+}
+const addLogListener = () => {
+    let contactForm = document.querySelectorAll(".contact-form");
+    contactForm.forEach(form => {
+        addLogListenerToContact(form);
+    });
+};
 const addContactListener = () => {
     let form = document.querySelector("#app-form");
     form.addEventListener("click", e => {
@@ -63,37 +85,17 @@ const addContactListener = () => {
             clickEvent.innerHTML = "Remove Contact";
             clickEvent.parentElement.insertBefore(template, clickEvent.parentElement.lastElementChild);
             clickEvent.parentElement.insertBefore(btnElem, clickEvent.parentElement.lastElementChild);
-            addLogListener();
+            addLogListenerToContact(template);
         }
     });
 };
+//------------ Add forms templates to HTML ------------//
 const loadAppForm = ()=>{
     document.querySelectorAll(".app-form").forEach(elem => elem.innerHTML = appFormTemplate);
     addContactListener();
 };
-
 const loadCompanyForm = ()=>{
     document.querySelectorAll(".company-form").forEach(elem => elem.innerHTML = companyFormTemplate);
-};
-
-const addLogListener = () => {
-    let contactForm = document.querySelectorAll(".contact-form");
-    contactForm.forEach(form => {
-        form.addEventListener("click", e => {
-            logBtn = e.target;
-            if(logBtn.classList.contains("remove-log")){
-                e.target.parentElement.remove();
-            }
-            if(logBtn.classList.contains("add-log")){  
-                let newNode = document.createElement("div");
-                newNode.innerHTML = logBtn.parentElement.innerHTML;
-                newNode.classList = "form-group log-info";
-                logBtn.parentElement.parentElement.append(newNode);
-                logBtn.innerHTML = "Remove Log";
-                logBtn.classList = "remove-log"; 
-            }
-        }); 
-    });
 };
 const loadContactForm = ()=>{
     document.querySelectorAll(".contact-form").forEach(elem => elem.innerHTML = contactFormTemplate);
