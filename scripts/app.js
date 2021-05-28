@@ -1,4 +1,4 @@
-// ***** create variable to DOM elements ***** //
+// ***** creates variables to DOM elements and adds functionality ***** //
 
 //------------ Main Section Containers ------------//
 const mainContentSections = document.querySelectorAll(".main-content");
@@ -42,7 +42,14 @@ const viewContactsListContainer = document.querySelector("#allcontactsview");
 
 
 
-//------------ Add forms templates helper functions ------------//
+//------------ Helper functions ------------//
+const selectIconBtn = btnId => {
+    let navIconBtns = document.querySelectorAll(".icon-button");
+    navIconBtns.forEach(button => {
+        button.classList.remove("active");
+    });
+    document.querySelector(btnId).classList.add("active");
+ };
 const addLogListenerToContact = form => {
     form.addEventListener("click", e => {
         logBtn = e.target;
@@ -90,14 +97,14 @@ const addContactListener = () => {
     });
 };
 //------------ Add forms templates to HTML ------------//
-const loadAppForm = ()=>{
+const loadAppForm = ()=> {
     document.querySelectorAll(".app-form").forEach(elem => elem.innerHTML = appFormTemplate);
     addContactListener();
 };
-const loadCompanyForm = ()=>{
+const loadCompanyForm = ()=> {
     document.querySelectorAll(".company-form").forEach(elem => elem.innerHTML = companyFormTemplate);
 };
-const loadContactForm = ()=>{
+const loadContactForm = ()=> {
     document.querySelectorAll(".contact-form").forEach(elem => elem.innerHTML = contactFormTemplate);
     addLogListener();
 };
@@ -109,11 +116,11 @@ loadContactForm();
 // const loadCompanyDetails = ()=>{};
 // const loadContactDetails = ()=>{};
 
-
 //------------ Toggle between Add New and View All Sections ------------//
 addSectionBtn.addEventListener('click', () => {
     if (addSection.style.display !== 'block'){
         pageTitle.innerHTML = 'Add New Application';
+        selectIconBtn("#create-app");
         document.querySelectorAll("form").forEach(fm => fm.style.display = "none" );
         document.querySelector("#app-form").style.display = "block";
     }
@@ -145,16 +152,19 @@ const addformTemplate = (idTag) => {
 };
 newAppTab.addEventListener('click', () => {
     pageTitle.innerHTML = 'Add New Application';
+    selectIconBtn("#create-app");
     let idTag = "#app-form";
     addformTemplate(idTag);
 });
 newCompanyTab.addEventListener('click', e => {
     pageTitle.innerHTML = 'Add New Company';
+    selectIconBtn("#create-company");
     let idTag = "#company-form";
     addformTemplate(idTag);
 });
 newContactTab.addEventListener('click', e => {
     pageTitle.innerHTML = 'Add New Contact';
+    selectIconBtn("#create-contact");
     idTag = "#contact-form";
     addformTemplate(idTag);
 });
@@ -173,6 +183,7 @@ const loadData = (template, templateClass, container) => {
 const loadAppViewAll = () => {
     clearViewContainer();
     pageTitle.innerHTML = 'View All Applications';
+    selectIconBtn("#view-app");
     // function that loads all available apps and puts them into the template
     // need to get list of apps from DB
     let list = [1,2,3];  //example test array
@@ -186,6 +197,7 @@ const loadAppViewAll = () => {
 const loadCompanyViewAll = () => {
     clearViewContainer();
     pageTitle.innerHTML = 'View All Companies';
+    selectIconBtn("#view-company");
     let list = [1,2,3];  //example test array
     let templateClass= "cards-container";
     let template = companyViewTemplate;
@@ -197,7 +209,7 @@ const loadCompanyViewAll = () => {
 const loadContactViewAll = ()=>{
     clearViewContainer();
     pageTitle.innerHTML = 'View All Contacts';
-    // viewContactsListContainer.innerHTML = "<div class='contact-view-temp'></div>";
+    selectIconBtn("#view-contact");
     let list = [1,2,3];  //example test array
     let templateClass= "cards-container";
     let template = contactViewTemplate;

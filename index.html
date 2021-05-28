@@ -17,10 +17,6 @@
     <div class="header theme">
         <div class="navbar">
             <ul>
-                <!-- <div class="menu-top">
-                    <img class="navClose" src="./icons/Close.svg"/>
-                    <img class="navOpen" src="./icons/Bars.svg"/>
-                </div> -->
                 <li id="add-info"><h4>Add New</h4></li>
                 <li id="view-info"><h4>View All</h4></li>
             </ul>
@@ -28,12 +24,17 @@
     </div>
     <div class="background">
         <div class="content">
-            <h1 id="page-title">Add New Application</h1>
             <div id="navbar-create" class="navbar">
-                <div id="create-app"><h3>Applications</h3></div>
-                <div id="create-company"><h3>Companies</h3></div>
-                <div id="create-contact"><h3>Contact</h3></div>
+                <button id="create-app" class="icon-button active"><img class="icon" src="icons/ListIcon.svg"><h3>Applications</h3></button>
+                <button id="create-company" class="icon-button"><img class="icon" src="icons/CompanyIcon.svg"><h3>Companies</h3></button>
+                <button id="create-contact" class="icon-button"><img class="icon" src="icons/ContactIcon.svg"><h3>Contact</h3></button>
             </div>
+            <div id="navbar-view" class="navbar">
+                <button id="view-app" class="icon-button active"><img class="icon" src="icons/ListIcon.svg"><h3>Applications</h3></button>
+                <button id="view-company" class="icon-button"><img class="icon" src="icons/CompanyIcon.svg"><h3>Companies</h3></button>
+                <button id="view-contact" class="icon-button"><img class="icon" src="icons/ContactIcon.svg"><h3>Contact</h3></button>
+            </div>
+            <h1 id="page-title">Add New Application</h1>
             <section class="main-content" id="add">
                 <div class="create-content content-container">
                     <form id="app-form" class="app-theme card">
@@ -70,11 +71,6 @@
                     </form>
                 </div>
             </section>
-            <div id="navbar-view" class="navbar">
-                <div id="view-app"><h3>Applications</h3></div>
-                <div id="view-company"><h3>Companies</h3></div>
-                <div id="view-contact"><h3>Contact</h3></div>
-            </div>
             <section class="main-content" id="view">
                 <div class="view-content content-container">
                     <div id="allappview"></div>
